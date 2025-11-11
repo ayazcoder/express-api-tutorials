@@ -3,10 +3,12 @@ const authRoutes = require('./routes/authRoutes')
 const adminRoutes = require('./routes/adminRoutes')
 const clientRoutes = require('./routes/clientRoutes')
 const { defaultController } = require('./controller/default')
-
+const connectDB = require('./config/config')
 const app = express()
 
 app.use(express.json())
+
+connectDB()
 
 // auth routes
 app.use('/auth', authRoutes)
